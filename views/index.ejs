@@ -6,9 +6,9 @@
     <title><%= title %></title>
   </head>
   <body>
-    <h1><%= title %></h1>
+    <%- include("navbar") %>
 
-    <a href="/new">Add new task</a>
+    <h1><%= title %></h1>
 
     <ul>
       <% messages.forEach(function(message) {%>

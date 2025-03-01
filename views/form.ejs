@@ -6,7 +6,10 @@
     <title><%= title %></title>
   </head>
   <body>
+    <%- include("navbar") %>
+
     <h1><%= title %></h1>
+    
     <form action="/new" method="post">
       <label for="messageText">
         Text
