@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <a href="/new">Add new task</a>
+
+    <ul>
+      <% messages.forEach(function(message) {%>
+      <li>
+        <p><%= message.text %></p>
+        <p><%= message.user %></p>
+        <p><%= message.added%></p>
+
+        <a
+          href="/message?user=<%=message.user%>&text=<%=message.text%>&added=<%=message.added%>"
+          >Open</a
+        >
+      </li>
+      <%}); %>
+    </ul>
+  </body>
+</html>
