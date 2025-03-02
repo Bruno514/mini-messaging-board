@@ -3,5 +3,8 @@
     "date-fns": "^4.1.0",
     "ejs": "^3.1.10",
     "express": "^4.21.2"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
