@@ -3,30 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
   </head>
   <body>
-    <%- include("navbar") %>
+    <%- include("templates/navbar") %>
 
-    <h1><%= title %></h1>
-    
-    <form action="/new" method="post">
-      <label for="messageText">
-        Text
-        <textarea name="messageText" id="messageText" required></textarea>
-      </label>
-      <label for="messageUser">
-        User
-        <input
-          type="text"
-          name="messageUser"
-          id="messageUser"
-          maxlength="20"
-          required
-        />
-      </label>
+    <main>
+      <h1><%= title %></h1>
 
-      <button type="submit">Submit message</button>
-    </form>
+      <form action="/new" method="post">
+        <label for="messageUser">
+          <p>Username</p>
+          <input
+            type="text"
+            name="messageUser"
+            id="messageUser"
+            maxlength="20"
+            required
+          />
+        </label>
+
+        <label for="messageText">
+          <p>Message text</p>
+          <textarea name="messageText" id="messageText" required></textarea>
+        </label>
+        <button type="submit">Submit message</button>
+      </form>
+    </main>
   </body>
 </html>

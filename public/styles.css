@@ -1,0 +1,155 @@
+:root {
+  /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=,1.5|2|3,s-l&g=s,l,xl,12 */
+
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+
+  --neutral-100: #ffffff;
+  --neutral-300: #cccccc;
+  --neutral-500: #808080;
+  --neutral-700: #4c4c4c;
+  --neutral-800: #333333;
+  --neutral-900: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* Temporary */
+nav {
+  margin-bottom: var(--space-xs);
+  padding-top: var(--space-2xs);
+
+  border-bottom: 1px solid var(--neutral-300);
+}
+nav > ul {
+  display: flex;
+  gap: var(--space-m);
+}
+nav > ul > li a {
+  font-weight: 300;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--neutral-800);
+}
+nav > ul > li a:visited {
+  color: var(--neutral-800);
+}
+nav > ul > li a:hover {
+  font-weight: 500;
+  text-decoration: underline;
+  color: var(--neutral-800);
+}
+
+body {
+  justify-content: center;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: var(--space-l);
+}
+
+main {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+ul.messages-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: 2px solid var(--neutral-700);
+  margin-block: var(--space-l);
+  padding: var(--space-m);
+}
+
+ul.messages-list li:not(:last-child) {
+  margin-bottom: var(--space-s);
+  padding-bottom: var(--space-s);
+  border-bottom: 2px solid var(--neutral-300);
+}
+li {
+  list-style: none;
+}
+
+.message-text {
+  max-width: 15em;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+article.message-full .message-text {
+  max-width: none;
+  white-space: wrap;
+  overflow: auto;
+}
+
+.message-user {
+  font-weight: 800;
+}
+
+.message-date {
+  font-weight: 100;
+}
+
+article.message .container {
+  display: flex;
+  gap: var(--space-s);
+  align-items: end;
+  margin-top: var(--space-s);
+}
+
+article.message .link-button {
+  margin-left: auto;
+}
+
+article.message-full {
+  margin-top: var(--space-m);
+  border-radius: 1rem;
+  border: 2px solid var(--neutral-700);
+  padding: var(--space-m);
+}
+
+a.link-button,
+button {
+  background-color: var(--neutral-700);
+  color: var(--neutral-100);
+  text-decoration: none;
+  border: 2px solid var(--neutral-300);
+  padding-inline: var(--space-m);
+  padding-block: var(--space-3xs);
+  border-radius: 0.5rem;
+}
+a.link-button:hover,
+button:hover {
+  background-color: var(--neutral-500);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
+}
+form button[type="submit"] {
+  width: fit-content;
+  background-color: var(--neutral-800);
+}
+
+label p {
+  font-weight: 200;
+}
+
+textarea {
+  width: 100%;
+}

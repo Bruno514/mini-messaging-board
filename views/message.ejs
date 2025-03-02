@@ -3,15 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
   </head>
   <body>
-    <%- include("navbar") %>
-    
-    <h1><%= title %></h1>
+    <%- include("templates/navbar") %>
 
-    <p><%= message.text %></p>
-    <p><%= message.user %></p>
-    <p><%= message.added%></p>
+    <main>
+      <h1><%= title %></h1>
+      <article class="message message-full">
+        <p class="message-text"><%= message.text %></p>
+        <div class="container">
+          <p class="message-user"><%= message.user %></p>
+          <p class="message-date"><%= message.added%></p>
+
+        </div>
+      </article>
+    </main>
   </body>
 </html>

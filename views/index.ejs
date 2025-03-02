@@ -3,26 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
   </head>
   <body>
-    <%- include("navbar") %>
+    <%- include("templates/navbar") %>
 
-    <h1><%= title %></h1>
+    <main>
+      <h1><%= title %></h1>
 
-    <ul>
-      <% messages.forEach(function(message) {%>
-      <li>
-        <p><%= message.text %></p>
-        <p><%= message.user %></p>
-        <p><%= message.added%></p>
+      <ul class="messages-list">
+        <% messages.forEach(function(message) {%>
+        <li>
+          <article class="message">
+            <p class="message-text"><%= message.text %></p>
+            <div class="container">
+              <p class="message-user"><%= message.user %></p>
+              <p class="message-date"><%= message.added%></p>
 
-        <a
-          href="/message?user=<%=message.user%>&text=<%=message.text%>&added=<%=message.added%>"
-          >Open</a
-        >
-      </li>
-      <%}); %>
-    </ul>
+              <a
+                class="link-button"
+                href="/message?user=<%=message.user%>&text=<%=message.text%>&added=<%=message.added%>"
+                >Open</a
+              >
+            </div>
+          </article>
+        </li>
+        <%}); %>
+      </ul>
+    </main>
   </body>
 </html>
