@@ -18,14 +18,10 @@
           <article class="message">
             <p class="message-text"><%= message.text %></p>
             <div class="container">
-              <p class="message-user"><%= message.user %></p>
+              <p class="message-user"><%= message.username %></p>
               <p class="message-date"><%= message.added%></p>
 
-              <a
-                class="link-button"
-                href="/message?user=<%=message.user%>&text=<%=message.text%>&added=<%=message.added%>"
-                >Open</a
-              >
+              <a class="link-button" href="/message?id=<%=message.id%>">Open</a>
             </div>
           </article>
         </li>

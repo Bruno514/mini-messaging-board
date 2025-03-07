@@ -1,11 +1,14 @@
-function get(req, res) {
-  const user = req.query.user;
-  const text = req.query.text;
-  const added = req.query.added;
+const db = require("../db/queries");
+
+async function get(req, res) {
+  const id = req.query.id;
+
+  const message = await db.getMessage(id);
+  console.log(message)
 
   res.render("message", {
     title: "Message details",
-    message: { user, text, added },
+    message: message[0],
   });
 }
 

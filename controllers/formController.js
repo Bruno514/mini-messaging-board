@@ -1,20 +1,15 @@
-const { format } = require("date-fns");
-const messages = require("../models/messageModel");
+const db = require("../db/queries");
 const { body, validationResult } = require("express-validator");
 
 function get(req, res) {
   res.render("form", { title: "New message" });
 }
 
-function post(req, res) {
-  const text = req.body.messageText;
+async function post(req, res) {
   const user = req.body.messageUser;
+  const text = req.body.messageText;
 
-  messages.push({
-    text: text,
-    user: user,
-    added: format(Date(), "dd-MM-yyyy"),
-  });
+  await db.insertMessage(user, text);
 
   res.redirect("/");
 }

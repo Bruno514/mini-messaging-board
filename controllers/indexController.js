@@ -1,7 +1,12 @@
-const messages = require("../models/messageModel");
+const db = require("../db/queries");
 
-function get(req, res) {
-  res.render("index", { title: "Message Board", messages: messages });
+async function get(req, res) {
+  const messages = await db.getAllMessages();
+  
+  res.render("index", {
+    title: "Message Board",
+    messages: messages,
+  });
 }
 
 module.exports = { get };
