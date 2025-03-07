@@ -19,7 +19,9 @@
             <p class="message-text"><%= message.text %></p>
             <div class="container">
               <p class="message-user"><%= message.username %></p>
-              <p class="message-date"><%= message.added%></p>
+              <p class="message-date">
+                <%= format(message.added, "M/d/yy p")%>
+              </p>
 
               <a class="link-button" href="/message?id=<%=message.id%>">Open</a>
             </div>

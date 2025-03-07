@@ -106,10 +106,7 @@ article.message .container {
   gap: var(--space-s);
   align-items: end;
   margin-top: var(--space-s);
-}
-
-article.message .link-button {
-  margin-left: auto;
+  flex-wrap: wrap;
 }
 
 article.message-full {
